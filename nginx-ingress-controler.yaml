@@ -1,15 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: api-ingress
+  name: hello-world-ing
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
 spec:
+  tls:
+  - secretName: tls-secret
   rules:
-    - host: kuruma.net
-      http:
-        paths:
+  - http:
+      paths:
         - path: /
+          pathType: Prefix
           backend:
-              serviceName: nginx-svc
-              servicePort: 80
+            service:
+              name: docker-hello-world-svc
+              port:
+                number: 8088
