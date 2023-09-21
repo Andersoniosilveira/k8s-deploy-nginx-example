@@ -10,5 +10,5 @@ spec: # especificação do recurso
     targetPort: 9113
   #  name: metrics # nome da porta
   selector: # seletor para identificar os pods/deployment que esse svc irá expor
-    app: nginx-kuruma # label que identifica o pod/deployment que será exposto
+    app: nginx # label que identifica o pod/deployment que será exposto
   type: LoadBalancer
