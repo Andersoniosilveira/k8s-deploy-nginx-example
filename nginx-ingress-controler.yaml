@@ -8,7 +8,7 @@ spec:
   tls:
   - secretName: tls-secret
   rules:
-  - host: api.kuruma.net
+  - host: api.kurumapelado.net
     http:
       paths:
         - path: /
