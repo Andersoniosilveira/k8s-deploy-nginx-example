@@ -8,7 +8,8 @@ spec: # especificação do recurso
   ports: # definição da porta do svc 
   - port: 9113 # porta do svc
     targetPort: 9113
+    nodePort: 30008
     name: metrics # nome da porta
   selector: # seletor para identificar os pods/deployment que esse svc irá expor
     app: nginx # label que identifica o pod/deployment que será exposto
-  type: ClusterIP
+  type: NodePort
